@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className=" h-max min-h-max flex items-center">
+    <section className=" h-max min-h-max flex items-center" id="get-started">
       <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-4 lg:px-12">
         <img
           src="/assets/images/cookie.png"

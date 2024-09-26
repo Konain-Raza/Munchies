@@ -6,7 +6,7 @@ const Sidebar = () => {
 
   const sections = [
     { title: "📖 Get Started", href: "#get-started", isSubSection: false },
-    { title: "🆕 What's New", href: "#whats-new", isSubSection: false },
+    // { title: "🆕 What's New", href: "#whats-new", isSubSection: false },
     { title: "⚙️ API Endpoints", href: "#api-endpoints", isSubSection: false },
     {
       title: "🍔 Get All Munchies",

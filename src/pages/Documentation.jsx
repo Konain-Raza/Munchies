@@ -38,7 +38,7 @@ const Documentation = () => {
             🍔 Get All Munchies
           </h4>
           <p>Use this endpoint to fetch a full list of available munchies.</p>
-          <Code req="GET" endpoint={`${domain}/api/munchies`} />
+          <Code req="GET" endpoint={`${domain}/munchies`} />
           <p className="mt-2">
             This will return a list of all munchie objects with their corresponding details. 📄
           </p>
@@ -46,7 +46,7 @@ const Documentation = () => {
           {/* Example Code Block */}
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
-            code={`fetch('${domain}/api/munchies')
+            code={`fetch('${domain}/munchies')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching munchies:', error));`}
@@ -66,7 +66,7 @@ const Documentation = () => {
           </p>
           <Code
             req="GET"
-            endpoint={`${domain}/api/munchies/category/:category`}
+            endpoint={`${domain}/munchies/category/:category`}
           />
           <p className="mt-2">
             Replace <code>:category</code> with the desired munchie category.
@@ -76,7 +76,7 @@ const Documentation = () => {
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
             code={`const category = 'Snacks'; // example category
-fetch(\`${domain}/api/munchies/category/\${category}\`)
+fetch(\`${domain}/munchies/category/\${category}\`)
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching munchies by category:', error));`}
@@ -92,7 +92,7 @@ fetch(\`${domain}/api/munchies/category/\${category}\`)
             🍽 Get Munchie Categories
           </h4>
           <p>Use this endpoint to fetch all available munchie categories.</p>
-          <Code req="GET" endpoint={`${domain}/api/munchies/categories`} />
+          <Code req="GET" endpoint={`${domain}/munchies/categories`} />
           <p className="mt-2">
             This will return a list of all available categories for munchies. 📂
           </p>
@@ -100,7 +100,7 @@ fetch(\`${domain}/api/munchies/category/\${category}\`)
           {/* Example Code Block */}
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
-            code={`fetch('${domain}/api/munchies/categories')
+            code={`fetch('${domain}/munchies/categories')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching munchie categories:', error));`}
@@ -127,7 +127,7 @@ fetch(\`${domain}/api/munchies/category/\${category}\`)
             🍕 Add a Munchie
           </h4>
           <p>Use this endpoint to add a new munchie to the database.</p>
-          <Code req="POST" endpoint={`${domain}/api/addmunchie`} />
+          <Code req="POST" endpoint={`${domain}/addmunchie`} />
           <p className="mt-2">Request Body:</p>
           <CodeSnippet
             code={`{
@@ -145,7 +145,7 @@ fetch(\`${domain}/api/munchies/category/\${category}\`)
           {/* Example Code Block */}
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
-            code={`fetch('${domain}/api/addmunchie', {
+            code={`fetch('${domain}/addmunchie', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',

@@ -1,6 +1,6 @@
 const { google } = require("googleapis");
 
-JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+const keys =JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 
 // Constants
 const SPREADSHEET_ID = "1df4zjXi-rZz3r5_6ZJkbSdusyV3ZdUfeeJu-StNMT5s";

@@ -1,6 +1,6 @@
 const { google } = require("googleapis");
 
-const keys =JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+const keys = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 
 // Constants
 const SPREADSHEET_ID = "1df4zjXi-rZz3r5_6ZJkbSdusyV3ZdUfeeJu-StNMT5s";
@@ -34,15 +34,30 @@ const fetchMunchiesFromDatabase = async () => {
   }));
 };
 
+// Fetch unique munchies categories
+const fetchMunchiesCategories = async (req, res) => {
+  try {
+    const munchiesCategories = await fetchMunchiesFromDatabase();
+    const categories = munchiesCategories.map((item) => item.category);
+    const uniqueCategories = [...new Set(categories)];
+
+    console.log("🗂️ Munchies categories successfully fetched from our database!");
+    res.status(200).json({ status: "success", data: uniqueCategories });
+  } catch (error) {
+    console.error("🚨 Error fetching munchies categories:", error.message);
+    res.status(500).json({ status: "error", message: "Failed to fetch munchies data from our database." });
+  }
+};
+
 // Get all munchies
 const fetchMunchies = async (req, res) => {
   try {
     const munchies = await fetchMunchiesFromDatabase();
     console.log("🍽️ Munchies successfully fetched from our database!");
-    res.status(200).json(munchies);
+    res.status(200).json({ status: "success", data: munchies });
   } catch (error) {
     console.error("🚨 Error fetching munchies:", error.message);
-    res.status(500).json({ error: "Failed to fetch munchies data from our database." });
+    res.status(500).json({ status: "error", message: "Failed to fetch munchies data from our database." });
   }
 };
 
@@ -58,14 +73,14 @@ const fetchMunchiesByCategory = async (req, res) => {
 
     if (filteredItems.length === 0) {
       console.warn("⚠️ No munchies found for the category:", category);
-      return res.status(404).json({ message: "🚨 No items found for this category." });
+      return res.status(404).json({ status: "error", message: "🚨 No items found for this category." });
     }
 
     console.log("📦 Munchies filtered by category:", category);
-    res.status(200).json(filteredItems);
+    res.status(200).json({ status: "success", data: filteredItems });
   } catch (error) {
     console.error("🚨 Error fetching munchies by category:", error.message);
-    res.status(500).json({ error: "Failed to fetch data from our database." });
+    res.status(500).json({ status: "error", message: "Failed to fetch data from our database." });
   }
 };
 
@@ -77,7 +92,8 @@ const addMunchie = async (req, res) => {
   if (!name || !description || !price || !category || !imageUrl) {
     console.error("🚨 Error: Missing required fields.");
     return res.status(400).json({
-      error: "All fields are required: name, description, price, category, and imageUrl.",
+      status: "error",
+      message: "All fields are required: name, description, price, category, and imageUrl.",
     });
   }
 
@@ -85,7 +101,8 @@ const addMunchie = async (req, res) => {
   if (isNaN(price)) {
     console.error("🚨 Error: Price must be a valid number.");
     return res.status(400).json({
-      error: "Price must be a valid number.",
+      status: "error",
+      message: "Price must be a valid number.",
     });
   }
 
@@ -104,11 +121,11 @@ const addMunchie = async (req, res) => {
     });
 
     console.log("✅ Munchie added successfully!");
-    res.status(201).json({ message: "Munchie added successfully!" });
+    res.status(201).json({ status: "success", message: "Munchie added successfully!" });
   } catch (error) {
     console.error("🚨 Error adding munchie:", error.message);
-    res.status(500).json({ error: "Failed to add munchie to our database." });
+    res.status(500).json({ status: "error", message: "Failed to add munchie to our database." });
   }
 };
 
-module.exports = { fetchMunchies, fetchMunchiesByCategory, addMunchie };
+module.exports = { fetchMunchies, fetchMunchiesByCategory, addMunchie, fetchMunchiesCategories };

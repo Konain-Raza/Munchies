@@ -5,7 +5,7 @@ import CodeSnippet from "../components/CodeSnippet";
 import Footer from "../components/Footer";
 
 const Documentation = () => {
-  const domain = "https://munchiee.vercel.app"; // Define the domain variable
+  const domain = "https://munchies-v1.vercel.app"; // Define the domain variable
 
   return (
     <div className="flex flex-col md:flex-row bg-gray-50 dark:bg-black transition duration-300 ease-in-out h-max min-h-screen">

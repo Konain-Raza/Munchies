@@ -1,14 +1,16 @@
 import React from "react";
+import axios from "axios"; // Import axios
 import Hero from "../components/Hero";
 import Code from "../components/Code";
 import CodeSnippet from "../components/CodeSnippet";
 import Footer from "../components/Footer";
+import Demo from "./Demo";
 
 const Documentation = () => {
   const domain = "https://munchies-v1.vercel.app"; // Define the domain variable
 
   return (
-    <div className="flex flex-col md:flex-row  transition duration-300 ease-in-out h-max min-h-screen">
+    <div className="flex flex-col md:flex-row transition duration-300 ease-in-out h-max min-h-screen">
       <section className="md:w-full p-4 overflow-y-auto h-screen overflow-x-hidden scrollbar-hide">
         <Hero />
         <h2
@@ -46,9 +48,8 @@ const Documentation = () => {
           {/* Example Code Block */}
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
-            code={`fetch('${domain}/munchies')
-  .then(response => response.json())
-  .then(data => console.log(data))
+            code={`axios.get('${domain}/munchies')
+  .then(response => console.log(response.data))
   .catch(error => console.error('Error fetching munchies:', error));`}
           />
         </div>
@@ -76,9 +77,8 @@ const Documentation = () => {
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
             code={`const category = 'Snacks'; // example category
-fetch(\`${domain}/munchies/category/\${category}\`)
-  .then(response => response.json())
-  .then(data => console.log(data))
+axios.get(\`${domain}/munchies/category/\${category}\`)
+  .then(response => console.log(response.data))
   .catch(error => console.error('Error fetching munchies by category:', error));`}
           />
         </div>
@@ -100,9 +100,8 @@ fetch(\`${domain}/munchies/category/\${category}\`)
           {/* Example Code Block */}
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
-            code={`fetch('${domain}/munchies/categories')
-  .then(response => response.json())
-  .then(data => console.log(data))
+            code={`axios.get('${domain}/munchies/categories')
+  .then(response => console.log(response.data))
   .catch(error => console.error('Error fetching munchie categories:', error));`}
           />
         </div>
@@ -145,53 +144,49 @@ fetch(\`${domain}/munchies/category/\${category}\`)
           {/* Example Code Block */}
           <h5 className="mt-4 font-semibold">Example Code:</h5>
           <CodeSnippet
-            code={`fetch('${domain}/addmunchie', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    name: "Pizza",
-    category: "Snacks",
-    price: 9.99,
-    description: "Delicious cheesy pizza.",
-    imageUrl: "http://example.com/pizza.jpg"
-  }),
+            code={`axios.post('${domain}/addmunchie', {
+  name: "Pizza",
+  category: "Snacks",
+  price: 9.99,
+  description: "Delicious cheesy pizza.",
+  imageUrl: "http://example.com/pizza.jpg"
 })
-.then(response => response.json())
-.then(data => console.log('Munchie added:', data))
+.then(response => console.log('Munchie added:', response.data))
 .catch(error => console.error('Error adding munchie:', error));`}
           />
         </div>
+        
         <div className="bg-[#b6bd9f75] p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200">
-      <h2 className="text-3xl font-extrabold mb-4 text-gray-800 dark:text-white" id="resources">
-        🔗 Snack-tastic Resources!
-      </h2>
-      <p className="text-lg text-gray-800 dark:text-white mb-4">
-        Dive into our delicious APIs and savor the flavor of coding! 😋
-      </p>
-      <div className="space-y-3">
-        <a
-          href="https://www.postman.com/security-specialist-55932751/munchies/collection/rlxbo0q/munchies?action=share&creator=37681364"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block py-3 px-5 text-lg text-white bg-orange-500 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md"
-        >
-          🍽️ Explore Postman Collection
-        </a>
-        <a
-          href="https://github.com/Konain-Raza/Munchies"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block py-3 px-5 text-lg text-white bg-gray-800 rounded-lg hover:bg-gray-800 transition duration-300 shadow-md"
-        >
-          📦 Check Out GitHub Repository
-        </a>
-      </div>
-      <p className="mt-4 text-lg text-gray-800 dark:text-white">
-        ⭐️ Love what you see? Give us a star on GitHub! Your support is the sprinkles on our cupcake! 🧁
-      </p>
-    </div>
+          <h2 className="text-3xl font-extrabold mb-4 text-gray-800 dark:text-white" id="resources">
+            🔗 Snack-tastic Resources!
+          </h2>
+          <p className="text-lg text-gray-800 dark:text-white mb-4">
+            Dive into our delicious APIs and savor the flavor of coding! 😋
+          </p>
+          <div className="space-y-3">
+            <a
+              href="https://www.postman.com/security-specialist-55932751/munchies/collection/rlxbo0q/munchies?action=share&creator=37681364"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-3 px-5 text-lg text-white bg-orange-500 rounded-lg hover:bg-orange-700 transition duration-300 shadow-md"
+            >
+              🍽️ Explore Postman Collection
+            </a>
+            <a
+              href="https://github.com/Konain-Raza/Munchies"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-3 px-5 text-lg text-white bg-gray-800 rounded-lg hover:bg-gray-800 transition duration-300 shadow-md"
+            >
+              📦 Check Out GitHub Repository
+            </a>
+          </div>
+          <p className="mt-4 text-lg text-gray-800 dark:text-white">
+            ⭐️ Love what you see? Give us a star on GitHub! Your support is the sprinkles on our cupcake! 🧁
+          </p>
+        </div>
+        
+        <Demo />
         <Footer />
       </section>
     </div>

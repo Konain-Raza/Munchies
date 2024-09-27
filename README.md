@@ -32,7 +32,7 @@ The Munchies API allows you to access and manage a diverse collection of munchie
 - **Add a Munchie**: Create new munchies with detailed information.
 
 ## API Documentation 📚
-Explore the full API documentation here: [Munchies API Docs](https://munchies-v1.vercel.app/docs)
+Explore the full API documentation here: [Munchies API Docs](http://munchiees.netlify.app/)
 
 ## Postman Collection 🔗
 Get started with our Postman collection for easy testing and integration of the Munchies API:

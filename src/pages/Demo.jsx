@@ -67,7 +67,7 @@ const App = () => {
         <h1 className="text-4xl font-bold text-center mb-8 text-white">
           Munchies Playground! 🍽️✨
         </h1>
-        <div className="mb-4 flex justify-center space-x-4 overflow-y-scroll scroll-hide w-full">
+        <div className="mb-4 flex justify-center space-x-4 overflow-y-scroll scrollbar-hide w-full">
           {categories.map((category, index) => (
             <button
               key={index}

@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
-    <div className="flex flex-col md:flex-row w-full min-h-screen">
+    <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#E9ECDF] dark:bg-black">
       <Sidebar />
       <main className="flex-1 overflow-y-auto  h-max">
         <Documentation />

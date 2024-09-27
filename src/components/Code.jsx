@@ -3,7 +3,7 @@ import CopyButton from "./CopyButton";
 
 const Code = ({ req, endpoint }) => {
   return (
-    <div className="dark:bg-gray-950 bg-slate-100 text-white rounded-lg p-4  w-full max-w-max overflow-hidden">
+    <div className="dark:bg-gray-950 bg-gray-100  text-white rounded-lg p-4  w-full max-w-max overflow-hidden">
       <code className="text-sm sm:text-base inline-flex text-left items-center space-x-4">
         <span className="flex gap-4 w-full">
           <span className="shrink-0 text-gray-500">{req}</span>

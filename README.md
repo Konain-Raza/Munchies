@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://munchiees.netlify.app/assets/images/cookie.png" alt="Delicious cookie" width="200" />
+</p>
+
+
 # Munchies API 🍪
 
 Are you ready to embark on a flavor-filled adventure? 🌟 Welcome to the Munchies API, where delicious snacks meet seamless coding! This API is your ticket to a snack paradise, perfect for food apps, snack-related projects, or simply satisfying those late-night cravings (we won’t judge)! 🍕🍩

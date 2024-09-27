@@ -60,7 +60,7 @@ const AddMunchieForm = () => {
   };
 
   return (
-    <div className="max-w-xl mt-10 mx-auto bg-[#b6bd9f75] dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+    <div className="max-w-xl mt-10 mx-auto bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
       <h2 className="text-2xl font-bold text-center text-black dark:text-white mb-4">
        Add a New Munchie 🍕
       </h2>
@@ -70,7 +70,7 @@ const AddMunchieForm = () => {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-[#9aa5756e] dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-gray-200 dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
           placeholder="Name"
           required
         />
@@ -78,7 +78,7 @@ const AddMunchieForm = () => {
           name="description"
           value={formData.description}
           onChange={handleChange}
-          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-[#9aa5756e] dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-gray-200 dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
           placeholder="Description"
           required
         />
@@ -87,7 +87,7 @@ const AddMunchieForm = () => {
           name="category"
           value={formData.category}
           onChange={handleChange}
-          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-[#9aa5756e] dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-gray-200 dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
           placeholder="Category"
           required
         />
@@ -96,7 +96,7 @@ const AddMunchieForm = () => {
           name="price"
           value={formData.price}
           onChange={handleChange}
-          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-[#9aa5756e] dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-gray-200 dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
           placeholder="Price"
           required
         />
@@ -105,13 +105,13 @@ const AddMunchieForm = () => {
           name="imageUrl"
           value={formData.imageUrl}
           onChange={handleChange}
-          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-[#9aa5756e] dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
+          className="w-full p-3 border dark:border-gray-700 dark:bg-gray-900 bg-gray-200 dark:text-white text-black rounded focus:outline-none focus:ring-2 focus:ring-blue-600 transition duration-200"
           placeholder="Image URL"
           required
         />
         <button
           type="submit"
-          className={`w-full p-3 text-black dark:text-white font-bold rounded transition duration-200 focus:outline-none focus:ring-2 ${
+          className={`w-full p-3 text-white dark:text-white font-bold rounded transition duration-200 focus:outline-none focus:ring-2 ${
             loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
           }`}
           disabled={loading}

@@ -28,13 +28,14 @@ const Documentation = () => {
           🔍 GET Methods
         </h3>
         <p className="text-gray-700 dark:text-gray-400 mb-4">
-          The following endpoints allow you to retrieve data from the Munchies API. 📦
+          The following endpoints allow you to retrieve data from the Munchies
+          API. 📦
         </p>
 
         {/* Fetch All Munchies */}
         <div
           id="get-all-munchies"
-          className="bg-[#b6bd9f75] p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
+          className="bg-gray-100 p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
         >
           <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
             🍔 Get All Munchies
@@ -42,7 +43,8 @@ const Documentation = () => {
           <p>Use this endpoint to fetch a full list of available munchies.</p>
           <Code req="GET" endpoint={`${domain}/munchies`} />
           <p className="mt-2">
-            This will return a list of all munchie objects with their corresponding details. 📄
+            This will return a list of all munchie objects with their
+            corresponding details. 📄
           </p>
 
           {/* Example Code Block */}
@@ -57,18 +59,16 @@ const Documentation = () => {
         {/* Fetch Munchies by Category */}
         <div
           id="get-munchies-by-category"
-          className="bg-[#b6bd9f75] p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
+          className="bg-gray-100 p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
         >
           <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
             🍱 Get Munchies by Category
           </h4>
           <p>
-            Fetch munchies that belong to a specific category using this endpoint.
+            Fetch munchies that belong to a specific category using this
+            endpoint.
           </p>
-          <Code
-            req="GET"
-            endpoint={`${domain}/munchies/category/:category`}
-          />
+          <Code req="GET" endpoint={`${domain}/munchies/category/:category`} />
           <p className="mt-2">
             Replace <code>:category</code> with the desired munchie category.
           </p>
@@ -86,7 +86,7 @@ axios.get(\`${domain}/munchies/category/\${category}\`)
         {/* Fetch Munchie Categories */}
         <div
           id="get-munchies-categories"
-          className="bg-[#b6bd9f75] p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
+          className="bg-gray-100 p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
         >
           <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
             🍽 Get Munchie Categories
@@ -114,13 +114,14 @@ axios.get(\`${domain}/munchies/category/\${category}\`)
           ➕ POST Methods
         </h3>
         <p className="text-gray-700 dark:text-gray-400 mb-4">
-          These endpoints allow you to create new data entries in the Munchies API. 📝
+          These endpoints allow you to create new data entries in the Munchies
+          API. 📝
         </p>
 
         {/* Add a Munchie */}
         <div
           id="add-munchie"
-          className="bg-[#b6bd9f75] p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
+          className="bg-gray-100 p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 transition duration-300"
         >
           <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
             🍕 Add a Munchie
@@ -138,7 +139,8 @@ axios.get(\`${domain}/munchies/category/\${category}\`)
 }`}
           />
           <p className="mt-2">
-            This request will create a new munchie in the database with the provided details. 🎉
+            This request will create a new munchie in the database with the
+            provided details. 🎉
           </p>
 
           {/* Example Code Block */}
@@ -155,9 +157,12 @@ axios.get(\`${domain}/munchies/category/\${category}\`)
 .catch(error => console.error('Error adding munchie:', error));`}
           />
         </div>
-        
-        <div className="bg-[#b6bd9f75] p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200">
-          <h2 className="text-3xl font-extrabold mb-4 text-gray-800 dark:text-white" id="resources">
+
+        <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-6 dark:bg-gray-900 dark:text-gray-200">
+          <h2
+            className="text-3xl font-extrabold mb-4 text-gray-800 dark:text-white"
+            id="resources"
+          >
             🔗 Snack-tastic Resources!
           </h2>
           <p className="text-lg text-gray-800 dark:text-white mb-4">
@@ -182,10 +187,11 @@ axios.get(\`${domain}/munchies/category/\${category}\`)
             </a>
           </div>
           <p className="mt-4 text-lg text-gray-800 dark:text-white">
-            ⭐️ Love what you see? Give us a star on GitHub! Your support is the sprinkles on our cupcake! 🧁
+            ⭐️ Love what you see? Give us a star on GitHub! Your support is the
+            sprinkles on our cupcake! 🧁
           </p>
         </div>
-        
+
         <Demo />
         <Footer />
       </section>

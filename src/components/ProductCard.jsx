@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductCard = ({ product }) => {
   return (
-    <div className="bg-[#b6bd9f75] border rounded-lg shadow-lg p-4 dark:bg-gray-800 transition-transform duration-200 hover:shadow-xl hover:scale-105 transform-gpu relative overflow-hidden">
+    <div className="bg-gray-100 border rounded-lg shadow-lg p-4 dark:bg-gray-800 transition-transform duration-200 hover:shadow-xl hover:scale-105 transform-gpu relative overflow-hidden">
       <img
           loading="lazy"
         src={product.imageUrl}

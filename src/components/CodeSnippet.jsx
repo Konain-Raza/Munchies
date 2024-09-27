@@ -16,7 +16,7 @@ const CodeSnippet = ({ code }) => {
 
   return (
     <div
-      className="bg-[#9aa5756e] relative  dark:bg-black p-4 rounded-lg mt-3 w-full  mx-auto" // Limited width with 'max-w-md' and centered using 'mx-auto'
+      className="bg-gray-300 relative  dark:bg-black p-4 rounded-lg mt-3 w-full  mx-auto" // Limited width with 'max-w-md' and centered using 'mx-auto'
     >
       <pre className="text-sm md:text-base lg:text-lg text-gray-800 dark:text-gray-200 whitespace-pre-wrap break-words">
         {code}

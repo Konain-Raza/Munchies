@@ -26,6 +26,7 @@ const fetchMunchiesFromDatabase = async () => {
   });
 
   return response.data.values.map((item) => ({
+    id: index + 1,
     name: item[0],
     description: item[1],
     price: item[2],

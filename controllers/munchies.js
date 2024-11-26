@@ -34,6 +34,8 @@ const fetchMunchiesFromDatabase = async () => {
   }));
 };
 
+
+
 // Fetch unique munchies categories
 const fetchMunchiesCategories = async (req, res) => {
   try {
@@ -54,7 +56,7 @@ const fetchMunchies = async (req, res) => {
   try {
     const munchies = await fetchMunchiesFromDatabase();
     console.log("🍽️ Munchies successfully fetched from our database!");
-    res.status(200).json({ munchies });
+    res.status(200).json(munchies );
   } catch (error) {
     console.error("🚨 Error fetching munchies:", error.message);
     res.status(500).json({ status: "error", message: "Failed to fetch munchies data from our database." });

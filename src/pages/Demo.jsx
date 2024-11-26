@@ -16,7 +16,7 @@ const App = () => {
       try {
         const response = await fetch("https://munchies-v1.vercel.app/munchies");
         const data = await response.json();
-        setProducts(data.data);
+        setProducts(data);
         const uniqueCategories = [
           ...new Set(data.data.map((product) => product.category)),
         ];
@@ -52,7 +52,7 @@ const App = () => {
     try {
       const response = await fetch("https://munchies-v1.vercel.app/munchies");
       const data = await response.json();
-      setProducts(data.data);
+      setProducts(data);
       setSelectedCategory(null);
     } catch (error) {
       console.error("Error fetching all products:", error);

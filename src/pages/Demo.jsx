@@ -18,7 +18,7 @@ const App = () => {
         const data = await response.json();
         setProducts(data);
         const uniqueCategories = [
-          ...new Set(data.data.map((product) => product.category)),
+          ...new Set(data.map((product) => product.category)),
         ];
         setCategories(uniqueCategories);
       } catch (error) {

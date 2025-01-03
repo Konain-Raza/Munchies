@@ -19,7 +19,7 @@ const CopyButton = ({ code }) => {
                 data-text-initial="Copy to clipboard"
                 className="tooltip"
             >
-                {isCopied ? "Copied!" : "Copy to clipboard"}
+             
             </span>
             <span>
                 <svg

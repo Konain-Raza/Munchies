@@ -35,7 +35,7 @@ const Sidebar = () => {
             Munchies 🍪
           </h2>
           <button
-            className="md:hidden p-2 text-black dark:text-white bg-black"
+            className="md:hidden p-2 text-black dark:text-white"
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
           >
             {isSidebarOpen ? "✖️" : (

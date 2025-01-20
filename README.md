@@ -46,19 +46,19 @@ Get started with our Postman collection for easy testing and integration of the 
 ## Endpoints 🔍
 
 ### Get All Munchies
-- **Endpoint**: `GET https://munchies-v1.vercel.app/munchies`
+- **Endpoint**: `GET https://munchiess.vercel.app/munchies`
 - **Description**: Fetch a full list of available munchies.
 
 **Example Code**:
 ```javascript
-fetch('https://munchies-v1.vercel.app/munchies')
+fetch('https://munchiess.vercel.app/munchies')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching munchies:', error));
 ```
 
 ### Get Munchies by Category
-- **Endpoint**: `GET https://munchies-v1.vercel.app/munchies/category/:category`
+- **Endpoint**: `GET https://munchiess.vercel.app/munchies/category/:category`
 - **Description**: Fetch munchies that belong to a specific category.
 
 **Parameters**:
@@ -67,26 +67,26 @@ fetch('https://munchies-v1.vercel.app/munchies')
 **Example Code**:
 ```javascript
 const category = 'Snacks'; // example category
-fetch(`https://munchies-v1.vercel.app/munchies/category/${category}`)
+fetch(`https://munchiess.vercel.app/munchies/category/${category}`)
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching munchies by category:', error));
 ```
 
 ### Get Munchie Categories
-- **Endpoint**: `GET https://munchies-v1.vercel.app/munchies/categories`
+- **Endpoint**: `GET https://munchiess.vercel.app/munchies/categories`
 - **Description**: Fetch all available munchie categories.
 
 **Example Code**:
 ```javascript
-fetch('https://munchies-v1.vercel.app/munchies/categories')
+fetch('https://munchiess.vercel.app/munchies/categories')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.error('Error fetching munchie categories:', error));
 ```
 
 ### Add a Munchie
-- **Endpoint**: `POST https://munchies-v1.vercel.app/addmunchie`
+- **Endpoint**: `POST https://munchiess.vercel.app/addmunchie`
 - **Description**: Add a new munchie to the database.
 
 **Request Body**:
@@ -102,7 +102,7 @@ fetch('https://munchies-v1.vercel.app/munchies/categories')
 
 **Example Code**:
 ```javascript
-fetch('https://munchies-v1.vercel.app/addmunchie', {
+fetch('https://munchiess.vercel.app/addmunchie', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -125,7 +125,7 @@ Here are a few quick examples to demonstrate how to use the Munchies API effecti
 
 ### Fetch All Munchies
 ```javascript
-fetch('https://munchies-v1.vercel.app/munchies')
+fetch('https://munchiess.vercel.app/munchies')
   .then(response => response.json())
   .then(data => {
     console.log("Munchies List:", data);
@@ -134,7 +134,7 @@ fetch('https://munchies-v1.vercel.app/munchies')
 
 ### Adding a New Munchie
 ```javascript
-fetch('https://munchies-v1.vercel.app/addmunchie', {
+fetch('https://munchiess.vercel.app/addmunchie', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
